@@ -1,41 +1,59 @@
-# Automata and Formal Languages — JFLAP Practice Pack
+# Theory of Computer Science — JFLAP Practice Pack
 
-This pack contains the nine automata files supplied for this build, renamed with descriptive filenames, plus the complete set of 23 topic examples from the reference learning pack (also renamed). The result contains **32 `.jff` files** and covers all 30 topic areas listed below. The first nine files are additional DFA/NFA practice examples for the finite-automata section.
+This folder contains **exactly 30 `.jff` files**, arranged in the same learning sequence as the supplied reference pack. The extra nine introductory DFA/NFA practice files from the earlier draft have been removed so the collection stays at 30 files.
 
-## Contents and topic coverage
+The four requested automata examples are placed directly in topics **04–07**:
+- DFA minimization
+- DFA to regular grammar conversion
+- DFA to regular expression conversion
+- Combining automata
 
-| Topic area | File(s) | What to explore |
-|---|---|---|
-| Deterministic finite automata | `01_dfa_pattern_recognition.jff`, `03_dfa_language_checker.jff`, `05_dfa_state_transition_practice.jff`, `07_dfa_with_reject_state.jff`, `09_dfa_final_state_exercise.jff` | States, transitions, accepting and rejecting strings |
-| Nondeterministic finite automata | `02_nfa_branching_paths.jff`, `04_nfa_string_acceptor.jff`, `06_nfa_multiple_routes.jff`, `08_nfa_sequence_matcher.jff` | Multiple possible paths and acceptance |
-| NFA-to-DFA conversion and DFA minimization | Use the NFA/DFA examples above with JFLAP's conversion and minimization tools | Subset construction and equivalent states |
-| DFA to regular grammar / regular expression | Use the automata examples above with JFLAP conversion tools | State-to-production and state-elimination conversions |
-| Combining automata | Use the DFA/NFA examples above with JFLAP's product/combination operations | Union and combined language recognition |
-| Regular expressions | `10_regex_language_definition.jff`, `11_regex_to_automaton_exercise.jff`, `12_regex_equivalence_practice.jff` | Expression syntax, conversion and identities |
-| Regular grammars and DFA conversion | `13_right_linear_grammar_examples.jff`, `14_grammar_to_state_machine.jff` | Right-linear productions and equivalent automata |
-| DFA pattern search / grep relationship | `15_pattern_search_automaton.jff` | Recognizing a pattern within strings |
-| Mealy and Moore machines | `16_mealy_output_machine.jff`, `17_moore_output_machine.jff` | Output on transitions versus output on states |
-| Context-free grammar | `18_context_free_language_rules.jff` | A grammar for equal numbers of a's and b's |
-| Pushdown automata | `19_stack_based_acceptor.jff`, `20_nondeterministic_stack_palindrome.jff` | Stack operations and nondeterministic stack behavior |
-| CFG for balanced parentheses | `21_balanced_bracket_grammar.jff` | Recursive grammar and empty production |
-| CFG production forms | `22_single_symbol_productions.jff`, `23_multi_symbol_productions.jff` | Single-symbol and multi-symbol right-hand sides |
-| User-controlled parsing | `24_manual_parse_steps.jff` | Step through a derivation manually |
-| LL, LR and CYK parsing | `25_top_down_ll_grammar.jff`, `26_bottom_up_lr_grammar.jff`, `27_cyk_normal_form_grammar.jff` | Top-down, bottom-up and CYK parsing grammars |
-| Turing machines | `28_single_tape_rewriting_machine.jff`, `29_dual_tape_copy_machine.jff`, `30_turing_scan_subroutine.jff` | One-tape, multi-tape and reusable scan behavior |
-| Unrestricted grammar | `31_unrestricted_rewrite_system.jff` | Context-sensitive rewriting patterns |
-| L-system | `32_simple_lsystem_rules.jff` | Axiom and recursive production rules |
+## Getting started
 
-## Opening the files
+1. Install Java if it is not already installed.
+2. Download JFLAP from https://www.jflap.org/modules/.
+3. Open JFLAP and choose **File → Open**.
+4. Select any `.jff` file in this folder.
+5. For automata, test strings using **Input → Fast Run** or **Step**. For conversion topics, use the corresponding JFLAP conversion operation.
 
-1. Install/open JFLAP.
-2. Choose **File → Open** and select any `.jff` file.
-3. For finite automata, enter sample strings and use **Input → Fast Run** or **Step**.
-4. For grammars, use the grammar/derivation tools available for the selected file type.
-5. For conversion topics, open an input automaton or grammar and use the relevant JFLAP conversion menu. The conversion exercise is performed in JFLAP; the files are starting examples.
+## File index
+
+| # | Topic | File | What to explore |
+|---:|---|---|---|
+| 1 | Deterministic Finite Automata | `01_deterministic_string_machine.jff` | DFA accepting strings over {a,b} that end in `ab` |
+| 2 | Nondeterministic Finite Automata | `02_nondeterministic_suffix_matcher.jff` | NFA accepting strings that end in `ab` |
+| 3 | NFA to DFA Conversion | `03_nfa_subset_conversion_start.jff` | NFA for strings whose second-to-last symbol is `a` |
+| 4 | DFA Minimization | `04_equivalent_state_minimizer.jff` | DFA with equivalent accepting states; minimize it to two states |
+| 5 | DFA to Regular Grammar Conversion | `05_even_a_regular_grammar_source.jff` | DFA accepting strings with an even number of `a` symbols |
+| 6 | DFA to Regular Expression Conversion | `06_starts_with_a_regex_source.jff` | DFA accepting strings that start with `a` |
+| 7 | Combining Automata | `07_automata_language_combiner.jff` | DFA for strings containing `aa`; use it with JFLAP's automata-combination operations |
+| 8 | Regular Expression | `08_regular_expression_builder.jff` | Expression `(a|b)*abb` |
+| 9 | Regular Expression to DFA Conversion | `09_expression_to_dfa_practice.jff` | Expression `(ab|b)*a` |
+| 10 | Regular Expression Identities | `10_regular_expression_laws.jff` | Expression `(a|b)*` for exploring identities |
+| 11 | Regular Grammar | `11_right_linear_grammar_practice.jff` | Right-linear grammar for `a*ba` |
+| 12 | Regular Grammar to DFA Conversion | `12_grammar_to_dfa_conversion.jff` | Convert a regular grammar into a DFA |
+| 13 | DFA Relationship to Grep | `13_abb_pattern_recognizer.jff` | DFA for `(a|b)*abb` |
+| 14 | Mealy Machine | `14_mealy_01_detector.jff` | Output `1` when `01` is completed |
+| 15 | Moore Machine | `15_moore_01_detector.jff` | Output `1` after `01` is detected |
+| 16 | Context-free Grammar | `16_anbn_context_free_grammar.jff` | Grammar `S → aSb \| λ`, generating `aⁿbⁿ` |
+| 17 | Pushdown Automata | `17_pushdown_anbn_acceptor.jff` | PDA accepting `aⁿbⁿ` by final state |
+| 18 | NPDA to CFG Conversion | `18_even_palindrome_npda.jff` | NPDA for even palindromes; use it for CFG conversion |
+| 19 | CFG to NPDA Conversion | `19_balanced_parentheses_grammar.jff` | Grammar for balanced parentheses; use it for NPDA conversion |
+| 20 | CFG with Single Symbols | `20_single_symbol_cfg_rules.jff` | Grammar with single-symbol right-hand sides |
+| 21 | CFG with Multiple Symbols | `21_multi_symbol_cfg_rules.jff` | Grammar with multi-symbol right-hand sides, such as `S → aAb` |
+| 22 | User-Controlled Parsing | `22_manual_cfg_derivation.jff` | Step through a grammar derivation manually |
+| 23 | LL Parsing | `23_ll_expression_parser.jff` | LL(1) grammar for arithmetic expressions |
+| 24 | LR Parsing | `24_lr_expression_parser.jff` | LR grammar `E → E+T \| T`, `T → a` |
+| 25 | CYK Parsing | `25_cyk_normal_form_grammar.jff` | Grammar in Chomsky Normal Form |
+| 26 | One-Tape Turing Machine | `26_single_tape_symbol_rewriter.jff` | Replace every `a` with `b` |
+| 27 | Multi-Tape Turing Machine | `27_two_tape_copy_machine.jff` | Copy input onto a second tape |
+| 28 | Turing Machine Building Blocks | `28_turing_machine_scan_block.jff` | Move right to the first blank as a reusable scan operation |
+| 29 | Unrestricted Grammar | `29_unrestricted_anbncn_grammar.jff` | Unrestricted grammar generating `aⁿbⁿcⁿ` |
+| 30 | L-System | `30_basic_lsystem_rules.jff` | Axiom `A` with rules `A → AB`, `B → A` |
 
 ## Notes
 
-- The nine renamed DFA/NFA files are the user's supplied JFLAP files; their automaton definitions have been preserved.
-- The other 23 files are based on the supplied reference archive's topic examples, with filenames changed.
-- Some specialized formats (Mealy/Moore output tags, multi-tape Turing machines and L-systems) can vary by JFLAP version. If a specialized file does not load as expected, recreate it in the corresponding JFLAP editor and save it from that version.
-- Conversion/minimization topics are often demonstrated using JFLAP's built-in operations rather than a separate saved output file.
+- The filenames have been changed from the reference archive while preserving the topic order.
+- Topics 04–07 use the four specifically requested automata examples.
+- Conversion tasks are performed with JFLAP's built-in conversion tools; the corresponding files are starting examples.
+- Some specialized machine/grammar formats can behave differently across JFLAP versions. If a specialized file does not load, recreate it in the matching editor and save it from your installed version.
